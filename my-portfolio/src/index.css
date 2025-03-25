@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body{
+    background-color: rgba(0, 0, 0, 0.863);
+}
+
+.navb{
+    border-radius: 10px;
+}
+
+.hero{
+    background-color: rgba(16, 38, 48, 0.633);
+}
