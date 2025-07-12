@@ -1,20 +1,19 @@
 @import "tailwindcss";
 
-
 html {
-    scroll-behavior: smooth;
-  }
-  
-/* body{
-    background-color: rgba(0, 0, 0, 0.863);
-} */
-
-.navb{
-    border-radius: 10px;
+  scroll-behavior: smooth;
 }
 
-.hero{
-    background-color: rgba(16, 38, 48, 0.633);
+body {
+  background-color: #d3cdcf;
+}
+
+.navb {
+  border-radius: 10px;
+}
+
+.hero {
+  background-color: rgba(16, 38, 48, 0.633);
 }
 /* 
 * {
@@ -41,17 +40,16 @@ html {
     from{width: 0}
 } */
 
-
 @keyframes floaty {
-    0%, 100% {
-      transform: translateY(0px) rotate(2deg);
-    }
-    50% {
-      transform: translateY(-10px) rotate(1deg);
-    }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(2deg);
   }
-  
-  .floating-image {
-    animation: floaty 4s ease-in-out infinite;
+  50% {
+    transform: translateY(-10px) rotate(1deg);
   }
-  
+}
+
+.floating-image {
+  animation: floaty 4s ease-in-out infinite;
+}

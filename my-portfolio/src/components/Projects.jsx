@@ -5,11 +5,11 @@ const projects = [
   {
     title: "Quiz App using React",
     description:
-      "A responsive quiz app for interactive learning with seamless navigation and real-time feedback.",
+      "A responsive quiz app with dynamic questions and real-time scoring.",
     features: [
       "Dynamic question fetching from API",
-      "Real-time feedback, timer, scoring system",
-      "Smooth navigation controls",
+      "Timer, feedback, and scoring system",
+      "Smooth user navigation",
     ],
     tech: ["React", "CSS", "REST API"],
     github: "https://github.com/Sanj3101/Quiz-App",
@@ -18,37 +18,36 @@ const projects = [
   {
     title: "Mental Health Text Classification App",
     description:
-      "A machine learning app for mental health assessment using NLP models with an interactive UI.",
+      "Text classifier using NLP models (BERT/DistilBERT) with real-time predictions.",
     features: [
-      "Fine-tuned BERT (92% accuracy), DistilBERT (89% accuracy)",
+      "Fine-tuned BERT (92%) and DistilBERT (89%)",
       "Real-time mental state prediction",
-      "Streamlit UI for easy text input",
+      "Streamlit interface",
     ],
-    tech: ["Python", "Hugging Face", "PyTorch", "Streamlit"],
+    tech: ["Python", "Hugging Face", "Streamlit"],
     github: "https://github.com/Sanj3101/Mental-HealthStatus-Classification",
     demo: "https://mental-health-statusdetect.streamlit.app/",
   },
   {
     title: "Astrophysical Object Classification",
-    description:
-      "Developed a model to classify stars, galaxies, and quasars using machine learning.",
+    description: "Model to classify stars, galaxies, and quasars using ML.",
     features: [
-      "Data preprocessing and feature engineering",
-      "Used Logistic Regression, Decision Tree, and KNN",
-      "Performance optimization for accuracy",
+      "Feature engineering and preprocessing",
+      "Logistic Regression, Decision Tree, KNN",
+      "Performance optimization",
     ],
-    tech: ["Python", "Scikit-learn", "Matplotlib", "Seaborn"],
+    tech: ["Python", "scikit-learn"],
     github: "https://github.com/Sanj3101/Astro-Object_Classification",
     demo: "",
   },
   {
     title: "Ghibliesque",
     description:
-      "A web app to browse, rate, and review Studio Ghibli films with recommendations and top-rated lists.",
+      "Browse, rate, and review Studio Ghibli films with recommendations.",
     features: [
-      "Browse all Studio Ghibli films with details",
-      "User ratings & reviews with aggregated scores",
-      "Top-rated lists and personalized recommendations",
+      "Detailed Ghibli film listings",
+      "User reviews and top-rated charts",
+      "Recommendations engine",
     ],
     tech: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
     github: "https://github.com/prishi003/ADLproject",
@@ -56,72 +55,65 @@ const projects = [
   },
 ];
 
-
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-          🚀 Projects
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg p-6 border hover:shadow-xl transition-all"
-            >
-              <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
-              <p className="text-gray-600 mt-2">{project.description}</p>
-
-              <ul className="mt-3 text-sm text-gray-700">
-                {project.features.map((feature, i) => (
-                  <li key={i} className="flex items-center">
-                    ✅ {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-4 flex space-x-4">
+    <section
+      id="projects"
+      className="min-h-screen pt-[94px] px-6 py-16 bg-white text-gray-800"
+    >
+      <h2 className="text-4xl sm:text-5xl font-bold text-center text-[#4a679e] mb-12">
+        Projects
+      </h2>
+      <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-gray-50 p-6 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition"
+          >
+            <h3 className="text-xl font-semibold text-[#4a679e]">
+              {project.title}
+            </h3>
+            <p className="text-gray-600 mt-2">{project.description}</p>
+            <ul className="mt-4 text-sm list-disc list-inside space-y-1 text-gray-700">
+              {project.features.map((feature, i) => (
+                <li key={i}>{feature}</li>
+              ))}
+            </ul>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.tech.map((tech, i) => (
+                <span
+                  key={i}
+                  className="bg-[#e8ecf6] text-[#4a679e] text-xs font-medium px-3 py-1 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4 flex space-x-4 text-sm">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#4a679e] hover:underline flex items-center gap-1"
+              >
+                <FaGithub /> GitHub
+              </a>
+              {project.demo && (
                 <a
-                  href={project.github}
+                  href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 flex items-center gap-1 hover:underline"
+                  className="text-green-600 hover:underline flex items-center gap-1"
                 >
-                  <FaGithub /> GitHub
+                  <FaExternalLinkAlt /> Live Demo
                 </a>
-
-                {/* Conditionally render the Live Demo link only if demo is not an empty string */}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 flex items-center gap-1 hover:underline"
-                  >
-                    <FaExternalLinkAlt /> Live Demo
-                  </a>
-                )}
-              </div>
+              )}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
-
 
 export default Projects;
