@@ -1,40 +1,41 @@
 import React from "react";
-import mepic from "../assets/me1.jpg";
+import bg from "../assets/about2.svg";
 
 const About = () => {
   return (
-    <section id="about" className="p-10 bg-white text-gray-800">
-      <h2 className="text-4xl font-bold text-center">👩‍💻 About Me</h2>
-      <div className="mt-6 flex flex-col md:flex-row items-center justify-center">
-        <img
-          src={mepic}
-          alt="Sanjana Biswas"
-          className="w-60 h-90 object-cover rounded-lg shadow-lg"
-        />
-        <div className="ml-6 max-w-2xl">
-          <p className="text-lg">
-            Hi, I'm <b>Sanjana Biswas</b>, a Computer Science & Engineering undergraduate passionate about building <b>scalable software</b> and solving <b>real-world problems</b> through code.
-          </p>
-          <p className="mt-3 text-md opacity-90">
-            I have hands-on experience in <b>Full-Stack Web Development</b>, <b>Machine Learning</b>, and <b>Cloud Technologies</b>. Whether it’s optimizing algorithms, designing interactive web applications, or deploying AI-powered solutions, I enjoy turning ideas into impactful projects.  
-          </p>
-          <p className="mt-3 text-md opacity-90">
-            My journey has led me to work with frameworks like <b>React.js</b>, <b>Streamlit</b>, and tools like <b>AWS</b> and <b>Google Cloud</b>. I love tackling challenges—be it <b>data-driven applications</b>, <b>building ML models</b>, or <b>participating in hackathons</b> to push my limits.
-          </p>
-          <p className="mt-3 text-md opacity-90">
-            Beyond coding, I enjoy mentoring, event management, and exploring creative spaces like writing and sketching. I believe in the power of <b>collaboration</b> and continuous learning to innovate and grow.
+    <section
+      id="about"
+      className="min-h-screen bg-white text-[#212529] flex items-center justify-center px-4 sm:px-6 py-20 mt-8 md:mt-0"
+    >
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 ">
+        {/* Image */}
+        <div className="flex-shrink-0 -mt-4 md:mt-0 md:-ml-12 lg:-ml-20 ">
+          <img
+            src={bg}
+            alt="About illustration"
+            className="w-[250px] sm:w-[320px] md:w-[380px] lg:w-[420px] h-auto md:translate-x-[-40px] md:translate-y-[-20px] floating-image"
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="w-full h-auto shadow-xl rounded-3xl flex flex-col items-center md:items-start text-center md:text-left space-y-6 p-6 bg-gradient-to-br from-white via-[#e0dfe8] to-[#c8c8cf]">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#6c63ff]">About Me</h2>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-xl leading-relaxed">
+            Hi, I'm <span className="font-semibold text-[#6c63ff]">Sanjana Biswas</span>, a Computer Science & Engineering undergraduate passionate about building scalable software and solving real-world problems through code.
           </p>
 
-          <div className="mt-5">
-            <a
-              className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded-lg shadow-md transition duration-400 hover:scale-102 inline-block"
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              📄 View My Resume
-            </a>
-          </div>
+          <p className="text-base sm:text-lg text-gray-700 max-w-xl leading-relaxed">
+            I bring hands-on experience in Full-Stack Web Development, Machine Learning, and Cloud Technologies. From optimizing algorithms and crafting responsive UI to deploying AI-powered solutions in the cloud, I enjoy turning ideas into impactful products.
+          </p>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-xl leading-relaxed">
+            My journey has introduced me to tools like <span className="font-medium">React.js</span>, <span className="font-medium">Streamlit</span>, <span className="font-medium">AWS</span>, and <span className="font-medium">Google Cloud</span>. I'm driven by challenges — whether it's data-intensive apps, intuitive UX, or hackathon deadlines.
+          </p>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-xl leading-relaxed">
+            Outside of code, I enjoy <span className="italic">mentoring, organizing events, and creative spaces like writing and sketching</span>. I believe in collaborative problem-solving and lifelong learning — values that continue to shape how I grow and contribute.
+          </p>
         </div>
       </div>
     </section>

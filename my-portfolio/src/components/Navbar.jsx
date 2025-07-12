@@ -1,20 +1,61 @@
-import React from "react";
-import logo from '../assets/Sanjana-3-26-2025.png'
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [activeLink, setActiveLink] = useState("home");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
   return (
-    <nav className="backdrop-blur-sm border border-neutral-700/80">
-      <div className="container px-4 mx-auto relative text-sm text-white">
-        <div className="flex justify-between items-center">
-          <div className="flex justify-center items-center flex-shrink-0">
-            <img className="h-10 w-20 mr-2" src={logo} alt="Logo" />
-          </div>
-          <ul className="flex justify-center gap-10">
-            <li><a href="#about" className="hover:text-yellow-400 transform transition duration-500 hover:scale-150 inline-block">About</a></li>
-            <li><a href="#projects" className="hover:text-yellow-400 transform transition duration-500 hover:scale-150 inline-block">Projects</a></li>
-            <li><a href="#contact" className="hover:text-yellow-400 transform transition duration-500 hover:scale-150 inline-block">Contact</a></li>
-          </ul>
-        </div>
+    <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 h-20">
+      <div className="max-w-6xl mx-auto px-6 h-full flex justify-end items-center">
+        <ul className="flex space-x-10 text-base font-medium text-gray-700">
+          <li>
+            <a
+              href="#"
+              onClick={() => handleLinkClick("home")}
+              className={`transition-colors duration-300 hover:text-[#6c63ff] ${
+                activeLink === "home" ? "text-[#6c63ff] underline underline-offset-4" : ""
+              }`}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              onClick={() => handleLinkClick("about")}
+              className={`transition-colors duration-300 hover:text-[#6c63ff] ${
+                activeLink === "about" ? "text-[#6c63ff] underline underline-offset-4" : ""
+              }`}
+            >
+              About Me
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              onClick={() => handleLinkClick("contact")}
+              className={`transition-colors duration-300 hover:text-[#6c63ff] ${
+                activeLink === "contact" ? "text-[#6c63ff] underline underline-offset-4" : ""
+              }`}
+            >
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="#coming-soon"
+              onClick={() => handleLinkClick("coming")}
+              className={`transition-colors duration-300 hover:text-[#6c63ff] ${
+                activeLink === "coming" ? "text-[#6c63ff] underline underline-offset-4" : ""
+              }`}
+            >
+              Coming soon!
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   );

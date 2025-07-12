@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
-body{
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+/* body{
     background-color: rgba(0, 0, 0, 0.863);
-}
+} */
 
 .navb{
     border-radius: 10px;
@@ -11,3 +16,42 @@ body{
 .hero{
     background-color: rgba(16, 38, 48, 0.633);
 }
+/* 
+* {
+    outline: 1px solid red;
+  } */
+
+/*
+.headline{
+    letter-spacing: 3px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    animation:
+        typing 2s steps(16),
+        cursor .5s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {border-color: transparent}
+}
+
+@keyframes typing {
+    from{width: 0}
+} */
+
+
+@keyframes floaty {
+    0%, 100% {
+      transform: translateY(0px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+  
+  .floating-image {
+    animation: floaty 4s ease-in-out infinite;
+  }
+  

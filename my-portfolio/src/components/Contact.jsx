@@ -1,47 +1,81 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaSpotify } from "react-icons/fa";
+import React, { useState } from "react";
+import logo from "../assets/contact.svg"; // Use your actual contact image path
 
-const ContactMe = () => {
+const Contact = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", form);
+  };
+
   return (
-    <footer id="contact" className=" foot bg-gray-900 text-white py-10">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <div>
-          <h2 className="text-2xl font-bold mb-4">📬 Contact Me</h2>
-          <p className="flex items-center gap-2">
-            <FaEnvelope className="text-yellow-400" /> 22053101@KIIT.ac.in
-          </p>
-          <p className="flex items-center gap-2">
-            <FaEnvelope className="text-yellow-400" /> sanjanabiswas557@kiit.ac.in
-          </p>
-          <p className="flex items-center gap-2 mt-2">
-            <FaPhone className="text-green-400" /> +9064347554
-          </p>
-          <p className="flex items-center gap-2 mt-2">
-            <FaMapMarkerAlt className="text-red-400" /> Bhubaneshwar, Odisha
-          </p>
+    <section
+      id="contact"
+      className="min-h-screen py-20 px-6 bg-white flex items-center justify-center"
+    >
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+        {/* Left - Contact Form */}
+        <div className="shadow-xl rounded-3xl p-8 bg-gradient-to-br from-white via-[#e8e7f1] to-[#dcdbe6]">
+          <h2 className="text-3xl font-bold text-[#6c63ff] mb-6">Contact Me</h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-gray-700 font-medium mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6c63ff] bg-white"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-medium mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6c63ff] bg-white"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-medium mb-1">Message</label>
+              <textarea
+                name="message"
+                rows="5"
+                value={form.message}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6c63ff] bg-white resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="bg-[#6c63ff] text-white px-6 py-2 rounded-full font-medium hover:bg-[#6c4ed9] transition"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
 
-        <div className="flex flex-col items-center md:items-end">
-          <h2 className="text-2xl font-bold mb-4">🌐 Connect With Me</h2>
-          <div className="flex gap-5">
-            <a href="https://github.com/Sanj3101" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition">
-              <FaGithub size={30} />
-            </a>
-            <a href="https://www.linkedin.com/in/sanjana783" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-white transition">
-              <FaLinkedin size={30} />
-            </a>
-            <a className="text-blue-500 hover:text-white transition">
-              <FaTwitter size={30} />
-            </a>
-            <a className="text-green-400 hover:text-white transition">
-              <FaSpotify size={30} />
-            </a>
-          </div>
+        {/* Right - Floating Image */}
+        <div className="flex justify-center md:justify-end">
+          <img
+            src={logo}
+            alt="Contact illustration"
+            className="w-[550px] sm:w-[500px] md:w-[660px] lg:w-[820px] h-auto floating-image"
+          />
         </div>
-        
       </div>
-    </footer>
+    </section>
   );
 };
 
-export default ContactMe;
+export default Contact;
