@@ -53,7 +53,49 @@ const projects = [
     github: "https://github.com/prishi003/ADLproject",
     demo: "",
   },
+  {
+    title: "PlantPal – Full-Stack Plant Care & Community App",
+    description:
+      "Full-stack plant care app with user management, community posts, and care tracking.",
+    features: [
+      "JWT-based authentication and protected API routes",
+      "Image uploads using Supabase Storage and Multer",
+      "CRUD operations for users, plants, schedules, and posts",
+      "Frontend-backend integration with React and Context API",
+    ],
+    tech: ["Express.js", "PostgreSQL", "Prisma", "Supabase", "React"],
+    github: "", // Add GitHub URL if available
+    demo: "",   // Add demo URL if available
+  },
+  {
+    title: "GenAI PDF Study Assistant – Notes & Quiz Generator",
+    description:
+      "AI assistant to extract text from PDFs, summarize, and generate quizzes using GPT-4.",
+    features: [
+      "Semantic search with sentence-transformers and FAISS",
+      "Chunking and vectorization pipeline for document context",
+      "Streamlit interface with REST-like logic",
+      "Dynamic prompting with OpenAI GPT for summarization and quizzes",
+    ],
+    tech: ["Python", "Streamlit", "OpenAI API", "FAISS"],
+    github: "", 
+    demo: "",   
+  },
+  {
+    title: "Coding RPG Game (In Progress)",
+    description:
+      "Gamified platform that teaches Python via interactive story-driven coding puzzles.",
+    features: [
+      "Region-based levels and Firestore-backed dynamic puzzles",
+      "Immersive visual novel scenes with GSAP animations",
+      "Firebase Auth for secure login and progress tracking",
+    ],
+    tech: ["React", "Firebase", "Tailwind CSS", "GSAP"],
+    github: "", 
+    demo: "",  
+  },
 ];
+
 
 const Projects = () => {
   return (
